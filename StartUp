@@ -361,8 +361,8 @@
                 <i class="fas fa-user"></i>
             </div>
             <div class="header-content">
-                <h1>Tu Nombre Completo</h1>
-                <p>Desarrollador Web Frontend</p>
+                <h1>JOEL DE JESUS LOPEZ MEZA</h1>
+                <p>Desarrollador BACKEND</p>
             </div>
         </div>
     </header>
@@ -372,25 +372,25 @@
             <h2 class="section-title">Sobre Mí</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Soy un profesional apasionado por el desarrollo web con experiencia en la creación de aplicaciones modernas y responsivas. Mi objetivo es siempre crear soluciones que no solo cumplan con los requisitos técnicos, sino que también brinden una excelente experiencia de usuario.</p>
+                    <p>Soy un profesional con mas de 2 años de experiencia apasionado por el desarrollo con experiencia en la creación de aplicaciones. Mi objetivo es siempre crear soluciones que no solo cumplan con los requisitos técnicos, sino que también brinden una excelente experiencia de usuario.</p>
                     <p>Me considero una persona proactiva, con gran capacidad de aprendizaje y adaptación a nuevos entornos y tecnologías. Disfruto trabajando en equipo y enfrentando nuevos desafíos que me permitan crecer profesionalmente.</p>
                 </div>
                 <div class="info-grid">
                     <div class="info-item">
                         <i class="fas fa-calendar-alt"></i>
-                        <span>25 años</span>
+                        <span>24 años</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Ciudad, País</span>
+                        <span>Jalisco, México</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <span>tu.email@ejemplo.com</span>
+                        <span>joellopezmeza28@gmail.com</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <span>+123 456 7890</span>
+                        <span>+52 3325292473</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-globe"></i>
@@ -408,20 +408,20 @@
             <h2 class="section-title">Experiencia Laboral</h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2020 - Presente</div>
-                    <h3 class="timeline-title">Desarrollador Frontend Senior</h3>
-                    <div class="timeline-subtitle">Empresa Tecnológica XYZ</div>
-                    <p>Desarrollo de aplicaciones web utilizando React, Vue.js y tecnologías modernas. Liderazgo de equipo de desarrollo y colaboración en el diseño de arquitecturas escalables.</p>
+                    <div class="timeline-date">2022 - Presente</div>
+                    <h3 class="timeline-title">Analista de desarrollos .Net</h3>
+                    <div class="timeline-subtitle">Nubitec</div>
+                    <p>Desarrollo de soluciones usando: .Net (Visual Basic), Python (FastAPI), SQL Server, MongoDB, Clarion. Colaboración en aplicacion de buenas practicas.</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2018 - 2020</div>
-                    <h3 class="timeline-title">Desarrollador Web</h3>
+                    <h3 class="timeline-title">Desarrollador</h3>
                     <div class="timeline-subtitle">Agencia Digital Creativa</div>
                     <p>Creación de sitios web responsivos para diversos clientes, implementación de estrategias de SEO y optimización de rendimiento.</p>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">2016 - 2018</div>
-                    <h3 class="timeline-title">Practicante de Desarrollo</h3>
+                    <h3 class="timeline-title">Soporte tecnico</h3>
                     <div class="timeline-subtitle">StartUp Innovadora</div>
                     <p>Apoyo en el desarrollo de aplicaciones web, mantenimiento de código y resolución de problemas técnicos.</p>
                 </div>
