@@ -3,664 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi CV Profesional</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --text: #333;
-            --text-light: #777;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: #f9f9f9;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: 100% 100%;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            margin: 0 auto 20px;
-            background-color: #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .profile-img i {
-            font-size: 70px;
-            color: #fff;
-        }
-        
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .header-content p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        /* Sections */
-        section {
-            padding: 40px 0;
-            background: white;
-            margin: 20px 0;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-        
-        section:nth-child(even) {
-            background: var(--light);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary);
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
-        
-        /* About */
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            align-items: center;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-        }
-        
-        .info-grid {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            min-width: 300px;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .info-item i {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            width: 30px;
-        }
-        
-        /* Experience & Education */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 30px;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: var(--secondary);
-        }
-        
-        .timeline-item {
-            padding: 20px 0;
-            padding-left: 60px;
-            position: relative;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 22px;
-            top: 24px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--secondary);
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--secondary);
-        }
-        
-        .timeline-date {
-            font-weight: bold;
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-        
-        .timeline-title {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-        
-        .timeline-subtitle {
-            font-weight: bold;
-            color: var(--text-light);
-            margin-bottom: 10px;
-        }
-        
-        /* Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category h3 {
-            margin-bottom: 15px;
-            color: var(--primary);
-            padding-bottom: 5px;
-            border-bottom: 2px solid var(--secondary);
-        }
-        
-        .skill-item {
-            margin-bottom: 15px;
-        }
-        
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background: #e9e9e9;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-progress {
-            height: 100%;
-            background: var(--secondary);
-            border-radius: 4px;
-            width: 0;
-            transition: width 1s ease;
-        }
-        
-        /* Contact */
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-        
-        .contact-text a {
-            color: var(--text);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .contact-text a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-        
-        .social-links a:hover {
-            color: var(--secondary);
-            transform: translateY(-3px);
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content h1 {
-                font-size: 2rem;
-            }
-            
-            .timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-item {
-                padding-left: 50px;
-            }
-            
-            .timeline-item::before {
-                left: 12px;
-            }
-        }
-        
-        /* Print Styles */
-        @media print {
-            body {
-                color: black;
-                background: white;
-            }
-            
-            section, header {
-                box-shadow: none;
-                margin: 10px 0;
-            }
-            
-            .social-links {
-                display: none;
-            }
-        }
-    </style>
+    <title>Joel de Jesús López Meza - Desarrollador</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="profile-img">
-                <i class="fas fa-user"></i>
+    <header id="home" class="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#home" class="logo">Joel López Meza</a>
+                <ul class="nav-links">
+                    <li><a href="#about">Acerca de Mí</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#experience">Experiencia</a></li>
+                    <li><a href="#education">Estudios</a></li>
+                    <li><a href="#projects">Proyectos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
             </div>
-            <div class="header-content">
-                <h1>JOEL DE JESUS LOPEZ MEZA</h1>
-                <p>Desarrollador BACKEND</p>
+        </nav>
+        <div class="hero container">
+            <div class="hero-content">
+                <div class="profile-pic-container">
+                    <!-- Placeholder para tu foto de perfil, reemplázala -->
+                    <img src="profile_joel.jpg" alt="Foto de perfil de Joel López Meza" class="profile-pic">
+                </div>
+                <h1>Joel de Jesús López Meza</h1>
+                <h2>Estudiante de Ing. En Computación | Desarrollador con +2 años de experiencia</h2>
+                <p class="tagline">Apasionado por crear soluciones robustas y eficientes.</p>
+                <div id="reloj" class="reloj-digital"></div>
+                <div class="cta-buttons">
+                    <a href="Joel_Lopez_Meza_CV.pdf" download="Joel_Lopez_Meza_CV.pdf" class="btn primary">Descargar CV</a>
+                    <a href="#contact" class="btn secondary">Contactar</a>
+                </div>
             </div>
         </div>
     </header>
-    
-    <div class="container">
-        <section id="about">
-            <h2 class="section-title">Sobre Mí</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy un profesional con mas de 2 años de experiencia apasionado por el desarrollo con experiencia en la creación de aplicaciones. Mi objetivo es siempre crear soluciones que no solo cumplan con los requisitos técnicos, sino que también brinden una excelente experiencia de usuario.</p>
-                    <p>Me considero una persona proactiva, con gran capacidad de aprendizaje y adaptación a nuevos entornos y tecnologías. Disfruto trabajando en equipo y enfrentando nuevos desafíos que me permitan crecer profesionalmente.</p>
-                </div>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>24 años</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jalisco, México</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>joellopezmeza28@gmail.com</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+52 3325292473</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-globe"></i>
-                        <span>www.tusitio.com</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/tuperfil</span>
-                    </div>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2>Acerca de Mí</h2>
+                <div class="about-content">
+                    <p>Soy un estudiante de Ingeniería en Computación con más de dos años de experiencia en desarrollo de software. Mi enfoque principal es la creación de soluciones eficientes y escalables, con un sólido conocimiento en el desarrollo .Net y manejo de bases de datos relacionales y no relacionales.</p>
+                    <p>Me motiva enfrentar nuevos desafíos y aplicar mi creatividad para resolver problemas complejos. Colaboro eficazmente en equipos grandes, aportando una mentalidad organizada y una rápida capacidad de aprendizaje. Siempre busco mejorar y adquirir nuevas habilidades que me permitan crecer profesionalmente en el ámbito de la tecnología.</p>
                 </div>
             </div>
         </section>
-        
-        <section id="experience">
-            <h2 class="section-title">Experiencia Laboral</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2022 - Presente</div>
-                    <h3 class="timeline-title">Analista de desarrollos .Net</h3>
-                    <div class="timeline-subtitle">Nubitec</div>
-                    <p>Desarrollo de soluciones usando: .Net (Visual Basic), Python (FastAPI), SQL Server, MongoDB, Clarion. Colaboración en aplicacion de buenas practicas.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2018 - 2020</div>
-                    <h3 class="timeline-title">Desarrollador</h3>
-                    <div class="timeline-subtitle">Agencia Digital Creativa</div>
-                    <p>Creación de sitios web responsivos para diversos clientes, implementación de estrategias de SEO y optimización de rendimiento.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2016 - 2018</div>
-                    <h3 class="timeline-title">Soporte tecnico</h3>
-                    <div class="timeline-subtitle">StartUp Innovadora</div>
-                    <p>Apoyo en el desarrollo de aplicaciones web, mantenimiento de código y resolución de problemas técnicos.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="education">
-            <h2 class="section-title">Formación Académica</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2012 - 2016</div>
-                    <h3 class="timeline-title">Ingeniería en Sistemas Computacionales</h3>
-                    <div class="timeline-subtitle">Universidad Prestigiosa</div>
-                    <p>Graduado con honores. Especialización en desarrollo de software y tecnologías web.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2010 - 2012</div>
-                    <h3 class="timeline-title">Técnico en Programación</h3>
-                    <div class="timeline-subtitle">Instituto Técnico</div>
-                    <p>Formación en fundamentos de programación, bases de datos y desarrollo web.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="skills">
-            <h2 class="section-title">Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Tecnologías Frontend</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>HTML5</span>
-                            <span>95%</span>
+
+        <section id="skills" class="section bg-light">
+            <div class="container">
+                <h2>Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Habilidades Técnicas</h3>
+                        <div class="skill-item">
+                            <span>Lenguaje C# + .Net</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
+                        <div class="skill-item">
+                            <span>React JS</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 75%;"></div></div>
                         </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>CSS3</span>
-                            <span>90%</span>
+                        <div class="skill-item">
+                            <span>Clarion 6</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 80%;"></div></div>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
+                        <div class="skill-item">
+                            <span>HTML, CSS</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
                         </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>JavaScript</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>React</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Tecnologías Backend</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Node.js</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>PHP</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
+                        <div class="skill-item">
                             <span>Python</span>
-                            <span>70%</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 65%;"></div></div>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
+                        <div class="skill-item">
+                            <span>SQL (SQL Server, PostgreSQL, MySQL, MariaDB)</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 90%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>MongoDB</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Soporte Técnico</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Redes estructuradas</span>
+                            <div class="progress-bar-container"><div class="progress-bar" style="width: 70%;"></div></div>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Bases de Datos</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-user-gear"></i> Habilidades Personales</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Trabajo bajo presión</li>
+                            <li><i class="fas fa-check-circle"></i> Responsable</li>
+                            <li><i class="fas fa-check-circle"></i> Organizado</li>
+                            <li><i class="fas fa-check-circle"></i> Buen trabajo en equipo</li>
+                            <li><i class="fas fa-check-circle"></i> Fácil relación con clientes</li>
+                            <li><i class="fas fa-check-circle"></i> Rápido Aprendizaje</li>
+                            <li><i class="fas fa-check-circle"></i> Solución rápida y efectiva a problemas</li>
+                        </ul>
+                        <h3><i class="fas fa-language"></i> Idiomas</h3>
+                        <ul>
+                            <li><i class="fas fa-circle"></i> Español (Nativo)</li>
+                            <li><i class="fas fa-circle"></i> Inglés (Básico)</li>
+                        </ul>
                     </div>
                 </div>
-                
-                <div class="skill-category">
-                    <h3>Habilidades Blandas</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Trabajo en Equipo</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Resolución de Problemas</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 88%"></div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Experiencia Laboral</h2>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <h3 class="empresa-titulo">Analista de desarrollos .Net – Desarrollo NUBIT SAPI de CV <span class="fecha">(01/12/2022 - Actualidad)</span> <i class="fas fa-chevron-down toggle-icon"></i></h3>
+                        <div class="detalle-experiencia">
+                            <ul>
+                                <li>Desarrollo de soluciones y mantenimiento para un GRP gubernamental en Clarion 6.</li>
+                                <li>Generación de parches y corrección de errores en el sistema.</li>
+                                <li>Actualización de tablas en SQL Server para mantenimiento y resolución de problemas.</li>
+                                <li>Documentación y redacción de procesos en colaboración con equipo de desarrolladores.</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Comunicación</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                    <div class="experience-item">
+                        <h3 class="empresa-titulo">Desarrollador C# .Net – Holocorp Group <span class="fecha">(01/12/2022 – 02/06/2024)</span> <i class="fas fa-chevron-down toggle-icon"></i></h3>
+                        <div class="detalle-experiencia">
+                            <ul>
+                                <li>Desarrollo de parches, soluciones nuevas y modificaciones funcionales para un sistema de punto de venta usando C# y .Net (4.8).</li>
+                                <li>Mantenimiento y soporte a la base de datos MySQL.</li>
+                                <li>Integración del PV con Rappi y Uber, generación de micro servicios de Windows.</li>
+                                <li>Desarrollo de APIs para conectividad con APK Mobile y un instalador para nuevas versiones del PV.</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Gestión de Tiempo</span>
-                            <span>82%</span>
+                    <div class="experience-item">
+                        <h3 class="empresa-titulo">Agente de servicio al cliente – Hispanic Teleservices <span class="fecha">(26/07/2022 – 01/12/2022)</span> <i class="fas fa-chevron-down toggle-icon"></i></h3>
+                        <div class="detalle-experiencia">
+                            <ul>
+                                <li>Atención a llamadas de clientes hispanohablantes de Estados Unidos para AT&T.</li>
+                                <li>Apoyo con facturación, compra de equipos y adquisición de planes.</li>
+                            </ul>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 82%"></div>
+                    </div>
+                    <div class="experience-item">
+                        <h3 class="empresa-titulo">Técnico en soporte – Neural Network / Holocorp Group <span class="fecha">(22/10/2020 – 12/07/2022)</span> <i class="fas fa-chevron-down toggle-icon"></i></h3>
+                        <div class="detalle-experiencia">
+                            <ul>
+                                <li>Manejo y configuración de redes estructuradas.</li>
+                                <li>Soporte a aplicación de Punto de Venta para restaurantes.</li>
+                                <li>Mantenimiento de equipos (computadoras, monitores, laptops, impresoras, routers).</li>
+                                <li>Tareas de carga de catálogos, configuraciones y capacitaciones del ERP “ODOO”.</li>
+                                <li>Configuración, formateo e instalación de equipos Windows y sistema de punto de venta.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <h3 class="empresa-titulo">Freelancer <i class="fas fa-chevron-down toggle-icon"></i></h3>
+                        <div class="detalle-experiencia">
+                            <ul>
+                                <li>Desarrollo de Landing Page para el "Sindicato Nacional de Trabajadores de la Educación" (SNTE) usando React JS, PostgreSQL y .Net para la API.</li>
+                                <li>Desarrollo de micro servicio de Windows para respaldo de base de datos MySQL y subida a FTP usando C# con .Net 8.</li>
+                                <li>Modificaciones a sistemas, APIs y páginas web sencillas (HTML/CSS).</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section id="contact">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <a href="mailto:tu.email@ejemplo.com">tu.email@ejemplo.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Teléfono</h3>
-                            <a href="tel:+1234567890">+123 456 7890</a>
+
+        <section id="education" class="section bg-light">
+            <div class="container">
+                <h2>Estudios</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Licenciatura en Ingeniería en Sistemas Computacionales</h3>
+                            <p>Actualmente estudiando</p>
+                            <p>Universidad de Guadalajara</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Ubicación</h3>
-                            <span>Ciudad, País</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>LinkedIn</h3>
-                            <a href="#">linkedin.com/in/tuperfil</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>GitHub</h3>
-                            <a href="#">github.com/tuusuario</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h3>Sitio Web</h3>
-                            <a href="#">www.tusitio.com</a>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Preparatoria N° 6 - UDG</h3>
+                            <p>Egresado</p>
+                            <p>Universidad de Guadalajara</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
-    
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Proyectos / Portafolio</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Landing Page SNTE</h3>
+                        <p>Landing Page desarrollada para el Sindicato Nacional de Trabajadores de la Educación. Control de educadores y sorteos.</p>
+                        <p class="technologies">Tecnologías: React JS, PostgreSQL, .Net API</p>
+                        <a href="#" target="_blank" class="btn secondary" disabled>Ver Proyecto (Demo no disponible)</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Micro Servicio de Respaldo</h3>
+                        <p>Servicio de Windows para generar respaldo de base de datos MySQL y subirlo a FTP.</p>
+                        <p class="technologies">Tecnologías: C#, .Net 8</p>
+                        <a href="#" target="_blank" class="btn secondary" disabled>Ver Proyecto (Demo no disponible)</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Otros Proyectos</h3>
+                        <p>Modificaciones a sistemas, desarrollo de APIs, páginas sencillas con HTML/CSS.</p>
+                        <p class="technologies">Tecnologías: HTML, CSS, JavaScript, Varios</p>
+                        <a href="#" target="_blank" class="btn secondary" disabled>Ver Más (Próximamente)</a>
+                    </div>
+                </div>
+
+                <div class="document-downloads">
+                    <h3>Documentos Descargables</h3>
+                    <div class="documento-item">
+                        <h4>Mi CV (PDF)</h4>
+                        <p>Descarga mi currículum vitae completo en formato PDF.</p>
+                        <a href="Joel_Lopez_Meza_CV.pdf" download="Joel_Lopez_Meza_CV.pdf" class="btn primary"><i class="fas fa-download"></i> Descargar CV</a>
+                    </div>
+                    <!-- Agrega más documentos si tienes, por ejemplo, certificados -->
+                    <!--
+                    <div class="documento-item">
+                        <h4>Certificado X</h4>
+                        <p>Certificación de [Nombre del Certificado].</p>
+                        <a href="ruta/a/tu/certificadoX.pdf" download="Certificado_X.pdf" class="btn primary"><i class="fas fa-download"></i> Descargar Certificado</a>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-dark text-white">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>Estoy disponible para nuevas oportunidades y colaboraciones. ¡No dudes en contactarme!</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:joellopezmeza28@gmail.com">joellopezmeza28@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> Teléfono: <a href="tel:+523325292473">3325292473</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección: Miguel Cabrera #4184, col. Miravalle, Guadalajara, Jalisco, México.</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="https://github.com/tu-usuario-github" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                    <!-- Agrega más redes sociales si deseas -->
+                    <!--
+                    <a href="https://twitter.com/tu-usuario-twitter" target="_blank" aria-label="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="https://www.facebook.com/tu-usuario-facebook" target="_blank" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+                    -->
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2023 Tu Nombre. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Joel de Jesús López Meza. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script>
-        // Animación para las barras de habilidades
-        document.addEventListener('DOMContentLoaded', function() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            
-            // Pequeño retraso para que la animación sea visible
-            setTimeout(() => {
-                skillBars.forEach(bar => {
-                    bar.style.width = bar.parentElement.previousElementSibling.lastElementChild.textContent;
-                });
-            }, 500);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
